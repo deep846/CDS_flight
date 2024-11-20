@@ -1,0 +1,123 @@
+<mvc:View xmlns:form="sap.ui.layout.form"
+
+    controllerName="flightcdsdc.controller.View1"
+    xmlns:table="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            
+            <table:Table
+                id="table"
+                selectionMode="Single"
+                rowSelectionChange="onRowSelect"
+                rows="{dc>/d/results}"
+            >
+                <table:columns>
+                    <table:Column id="c1">
+                        <table:label>
+                            <Label
+                                id="l1"
+                                text="Carrier Id"
+                            />
+                        </table:label>
+                        <table:template>
+                            <Text
+                                id="t1"
+                                text="{dc>Carrier_Id}"
+                            />
+                        </table:template>
+                    </table:Column>
+                    <table:Column id="c2">
+                        <table:label>
+                            <Label
+                                id="l2"
+                                text="Booking Id"
+                            />
+                        </table:label>
+                        <table:template>
+                            <Text
+                                id="t2"
+                                text="{dc>Booking_Id}"
+                            />
+                        </table:template>
+                    </table:Column>
+                    <table:Column id="c3">
+                        <table:label>
+                            <Label
+                                id="l3"
+                                text="Connection Id"
+                            />
+                        </table:label>
+                        <table:template>
+                            <Text
+                                id="t3"
+                                text="{dc>Connection_Id}"
+                            />
+                        </table:template>
+                    </table:Column>
+                    <table:Column id="c4">
+                        <table:label>
+                            <Label
+                                id="l4"
+                                text="Flight Date"
+                            />
+                        </table:label>
+                        <table:template>
+                            <Text
+                                id="t4"
+                                text="{dc>Flight_Date}"
+                            />
+                        </table:template>
+                    </table:Column>
+                    <table:Column id="c5">
+                        <table:label>
+                            <Label
+                                id="l5"
+                                text="Order Date"
+                            />
+                        </table:label>
+                        <table:template>
+                            <Text
+                                id="t5"
+                                text="{dc>Order_Date}"
+                            />
+                        </table:template>
+                    </table:Column>
+                </table:columns>
+            </table:Table>
+
+            <Button
+                id="btn"
+                press=".onPress"
+                text="Fetch Data"
+            />
+            <form:SimpleForm id="sform">
+                <form:content>
+                    <Label id="l11" text="Carrier Id"></Label>
+                    <Text id="txt1" text="{dc>Carrier_Id}"></Text>
+                </form:content>
+                <form:content>
+                    <Label id="l12" text="Booking Id"></Label>
+                    <Text id="txt2" text="{dc>Booking_Id}"></Text>
+                </form:content>
+                <form:content>
+                    <Label id="l13" text="Connection Id"></Label>
+                    <Text id="txt3" text="{dc>Connection_Id}"></Text>
+                </form:content>
+                <form:content>
+                    <Label id="l14" text="Flight Date"></Label>
+                    <Text id="txt4" text="{dc>Flight_Date}"></Text>
+                </form:content>
+                <form:content>
+                    <Label id="l15" text="Order Date"></Label>
+                    <Text id="txt5" text="{dc>Order_Date}"></Text>
+                </form:content>
+            </form:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>
